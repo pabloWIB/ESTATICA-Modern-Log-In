@@ -69,7 +69,6 @@ function App() {
                     </div>
                     <div>
                         <div id='forgotPassword' className='forgotPassword'>
-                            {/* Aquí puedes añadir contenido si es necesario */}
                         </div>
                         <a href="#">Forgot Password?</a>
                     </div>

@@ -61,8 +61,8 @@ body {
         display: flex;
         flex-flow: column wrap;
         gap: 16px;
-        >:nth-child(1){
-          input{
+        > :nth-child(1) {
+          input {
             padding: 4.5px 0px;
           }
         }
