@@ -1,4 +1,4 @@
-<h2 align="center">Página: <a href="https://estatica-modern-log-in.vercel.app/"></a>modernlog.com</h2>
+<h2 align="center">Página: <a href="https://estatica-modern-log-in.vercel.app/">modernlog.com</a></h2>
 
 <h2 >Tecnologías usadas👨🏻‍💻</h2>
 <br>
