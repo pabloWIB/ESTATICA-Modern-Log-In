@@ -1,11 +1,9 @@
-<!-- <h2 align="center">Diseño Figma: <a href="">Maquetado en Figma</a></h2> -->
-
-<h2 align="center">Página: <a href=""></a><span>Aún no disponible</span></h2>
+<h2 align="center">Página: <a href="https://estatica-modern-log-in.vercel.app/"></a>modernlog.com</h2>
 
 <h2 >Tecnologías usadas👨🏻‍💻</h2>
 <br>
 <h4>Front end: </h4>
-<img src="https://skillicons.dev/icons?i=html,css,sass,js,jquery"/>
+<img src="https://skillicons.dev/icons?i=html,css,sass,js,jquery,react"/>
 
 <h4>Servicios: </h4>
 <img src="https://skillicons.dev/icons?i=git,github"/>
@@ -13,10 +11,7 @@
 <h4>IDEs: </h4>
 <img src="https://skillicons.dev/icons?i=vscode"/>
 
-<!-- <h4>Apps:</h4>
-<img src="https://skillicons.dev/icons?i=figma" /> -->
-
-<h1>Modern LogIn</h1>
+<h1>Modern Log In</h1>
 
 <p>Bienvenido a Modern LogIn frontend project, diseñado por Pablo Nieto (GitHub: <a href="https://github.com/pabloWIB">pabloWIB</a>)</p>
 
@@ -26,23 +21,20 @@
 
 
 <h2>Resumen</h2>
-
-<p>De que va la página</p>
+<p>Este proyecto es una aplicación de inicio de sesión moderna, desarrollada exclusivamente en el frontend utilizando React. La interfaz cuenta con animaciones sutiles implementadas con jQuery, y se enfoca en la validación de formularios mediante React y JavaScript. La aplicación está diseñada para ser completamente responsiva, adaptándose a diferentes dispositivos y tamaños de pantalla.</p>
 
 <h2>Características</h2>
-
 <ul>
     <li><strong>Diseño Responsivo:</strong> La aplicación está diseñada para funcionar perfectamente en diferentes dispositivos y tamaños de pantalla, proporcionando una experiencia de usuario consistente.</li>
-    <li><strong></strong></li>
-    <li><strong></strong></li>
+    <li><strong>Animaciones Sutiles:</strong> Se incorporan animaciones suaves y atractivas utilizando jQuery para mejorar la interactividad.</li>
+    <li><strong>Validaciones Efectivas:</strong> Se implementan validaciones de formularios tanto en React como en JavaScript, asegurando una entrada de datos correcta por parte del usuario.</li>
 </ul>
 
 <h2>Tecnologías Utilizadas</h2>
-
 <ul>
     <li><strong>HTML5:</strong> Utilizado para estructurar el contenido de las páginas web.</li>
     <li><strong>CSS3 (Sass):</strong> Utilizado para estilar la interfaz de usuario y crear diseños responsivos.</li>
-    <li><strong>JavaScript (Vanilla JS, jQuery):</strong> Utilizado para implementar características interactivas y mejorar la experiencia del usuario.</li>
+    <li><strong>JavaScript (React, Vanilla JS, jQuery):</strong> Utilizado para implementar características interactivas y mejorar la experiencia del usuario.</li>
 </ul>
 
 <h2>Empezando</h2>

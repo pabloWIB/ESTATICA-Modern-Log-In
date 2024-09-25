@@ -1,21 +1,21 @@
 {
-  "short_name": "Moder LogIn",
-  "name": "Moder LogIn",
+  "short_name": "Modern LogIn",
+  "name": "Modern LogIn",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "%PUBLIC_URL%/IMG/FAVICON/favicon.co",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "%PUBLIC_URL%/IMG/FAVICON/apple-icon-180x180.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "180x180"
     },
     {
-      "src": "logo512.png",
+      "src": "%PUBLIC_URL%/IMG/FAVICON/ms-icon-310x310.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "310x310"
     }
   ],
   "start_url": ".",
