@@ -1,23 +1,39 @@
 {
-  "name": "modern",
-  "version": "0.1.0",
+  "name": "modern-log-in",
+  "version": "1.0.0",
   "private": true,
+  "description": "A React login interface with a live Spline 3D scene as the background, a password visibility toggle and client-side form validation.",
+  "keywords": [
+    "react",
+    "login",
+    "spline",
+    "ui",
+    "accessibility"
+  ],
+  "homepage": ".",
+  "license": "MIT",
+  "author": "Pablo Nieto Pérez (https://wib.digital)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pabloWIB/Modern-Log-In.git"
+  },
   "dependencies": {
     "@splinetool/react-spline": "^4.0.0",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "jquery": "^3.7.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "react-scripts": "5.0.1"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test:ci": "react-scripts test --watchAll=false"
   },
   "eslintConfig": {
     "extends": [

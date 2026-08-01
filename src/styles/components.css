@@ -1,0 +1,255 @@
+/* ==========================================================================
+   components.css — login card, form fields, buttons, status region
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Login card
+   -------------------------------------------------------------------------- */
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: var(--space-4);
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-surface-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.login-card__title {
+  font-size: var(--text-xl);
+}
+
+.login-card__subtitle {
+  margin-top: var(--space-5);
+  font-size: var(--text-lg);
+}
+
+.login-card__note {
+  max-width: var(--measure);
+  margin-top: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.login-card__form {
+  margin-top: var(--space-4);
+}
+
+/* --------------------------------------------------------------------------
+   Form fields
+   -------------------------------------------------------------------------- */
+
+.field + .field {
+  margin-top: var(--space-3);
+}
+
+.field__label {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.field__control {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-3);
+  background-color: var(--color-field-bg);
+  border: 1px solid var(--color-field-border);
+  border-radius: var(--radius-sm);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.field__control:focus-within {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-focus-glow);
+}
+
+.field--invalid .field__control {
+  border-color: var(--color-field-border-error);
+}
+
+.field__input {
+  flex: 1;
+  align-self: stretch;
+  /* The input carries the 44px tap target itself, so the surrounding control
+     ends up the right height whatever its border adds. */
+  min-height: var(--tap-target);
+  /* An input's intrinsic width (its `size` attribute, 20 characters by
+     default) otherwise sets a floor on how narrow the card can get, which
+     pushes the layout past the viewport below 360px. */
+  width: 0;
+  padding: var(--space-2) 0;
+  background: none;
+  border: 0;
+  color: var(--color-field-text);
+}
+
+/* The focus ring is drawn on .field__control, which wraps this input. */
+.field__input:focus {
+  outline: none;
+}
+
+.field__toggle {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: var(--tap-target);
+  height: var(--tap-target);
+  /* Pulled into the control's padding so the tap target stays 44px wide
+     without widening the field. */
+  margin-right: calc(var(--space-3) * -1);
+  background: none;
+  border: 0;
+  border-radius: var(--radius-sm);
+  color: var(--color-field-icon);
+  transition:
+    color var(--transition),
+    background-color var(--transition);
+}
+
+.field__toggle:hover {
+  color: var(--color-field-icon-hover);
+  background-color: var(--color-field-overlay);
+}
+
+.field__toggle:active {
+  background-color: var(--color-field-overlay-strong);
+}
+
+.field__toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.field__error {
+  max-width: var(--measure);
+  margin-top: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-error);
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: var(--tap-target);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition);
+}
+
+.button--primary {
+  margin-top: var(--space-4);
+  background-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+.button--primary:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.button--primary:active {
+  background-color: var(--color-accent-active);
+}
+
+.button--primary:disabled {
+  background-color: var(--color-accent-disabled);
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+/* --------------------------------------------------------------------------
+   Divider
+   -------------------------------------------------------------------------- */
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: var(--space-4) 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-surface-border);
+}
+
+/* --------------------------------------------------------------------------
+   Social sign-in
+   -------------------------------------------------------------------------- */
+
+.social {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.social__item {
+  flex: 1;
+}
+
+.social__button {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: var(--tap-target);
+  background-color: var(--color-field-bg);
+  border: 1px solid var(--color-field-border);
+  border-radius: var(--radius-md);
+  transition:
+    background-color var(--transition),
+    border-color var(--transition);
+}
+
+.social__button:hover {
+  background-color: #f1f1f1;
+  border-color: var(--color-field-icon);
+}
+
+.social__button:active {
+  background-color: #e4e4e4;
+}
+
+/* --------------------------------------------------------------------------
+   Status region
+   -------------------------------------------------------------------------- */
+
+.status {
+  max-width: var(--measure);
+  margin-top: var(--space-4);
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-surface-sunken);
+  border-left: 3px solid var(--color-surface-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+}
+
+/* --------------------------------------------------------------------------
+   Breakpoints
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 480px) {
+  .login-card {
+    padding: var(--space-6) var(--space-5);
+  }
+}

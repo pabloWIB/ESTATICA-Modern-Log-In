@@ -1,0 +1,99 @@
+/* ==========================================================================
+   layout.css — page shell, decorative backdrop and footer
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Page shell
+   -------------------------------------------------------------------------- */
+
+.page {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: var(--space-4) var(--space-3);
+  gap: var(--space-4);
+}
+
+.page__main {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Backdrop
+   The CSS grid and glow are the always-available background. The Spline scene
+   mounts on top of them once its chunk has loaded, so the page never shows a
+   blank screen while the scene downloads or if the CDN is unreachable.
+   -------------------------------------------------------------------------- */
+
+.page__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(circle at 50% 45%, var(--color-glow) 0%, transparent 45%),
+    linear-gradient(to right, var(--color-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-grid) 1px, transparent 1px);
+  background-size: 100% 100%, 96px 96px, 96px 96px;
+}
+
+.page__backdrop canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-target);
+  padding: 0 var(--space-1);
+  border-radius: var(--radius-sm);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+}
+
+.site-footer a:hover {
+  color: var(--color-link-hover);
+}
+
+.site-footer a:active {
+  color: var(--color-accent-hover);
+}
+
+/* --------------------------------------------------------------------------
+   Breakpoints
+   Only 480px and 768px carry real changes; 1024px and 1440px need none, since
+   the card keeps a fixed maximum width at every size above 768px.
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 480px) {
+  .page {
+    padding: var(--space-5) var(--space-4);
+  }
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: var(--space-6) var(--space-5);
+    gap: var(--space-5);
+  }
+}

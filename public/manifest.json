@@ -1,25 +1,31 @@
 {
-  "short_name": "Modern LogIn",
-  "name": "Modern LogIn",
-  "icons": [
-    {
-      "src": "%PUBLIC_URL%/IMG/FAVICON/favicon.co",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "%PUBLIC_URL%/IMG/FAVICON/apple-icon-180x180.png",
-      "type": "image/png",
-      "sizes": "180x180"
-    },
-    {
-      "src": "%PUBLIC_URL%/IMG/FAVICON/ms-icon-310x310.png",
-      "type": "image/png",
-      "sizes": "310x310"
-    }
-  ],
+  "name": "Modern Log In",
+  "short_name": "Modern Log In",
+  "description": "A React login interface with a live Spline 3D scene as the background.",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "favicon/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }

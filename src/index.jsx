@@ -1,0 +1,16 @@
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./app";
+import "./styles/base.css";
+import "./styles/layout.css";
+import "./styles/components.css";
+
+const container = document.getElementById("root");
+
+if (container) {
+  createRoot(container).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}

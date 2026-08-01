@@ -1,58 +1,169 @@
-<img src="1.png"/>
-<h2 align="center">Página: <a href="https://estatica-modern-log-in.vercel.app/">modernlog.com</a></h2>
+# Modern-Log-In
 
-<h2 >Tecnologías usadas👨🏻‍💻</h2>
-<br>
-<h4>Front end: </h4>
-<img src="https://skillicons.dev/icons?i=html,css,sass,js,jquery,react"/>
+Login screen built in React, with a 3D Spline scene as the background and a password visibility toggle.
 
-<h4>Servicios: </h4>
-<img src="https://skillicons.dev/icons?i=git,github"/>
+[![Live demo](https://img.shields.io/badge/demo-modernlogin.wib.digital-2ea44f)](https://modernlogin.wib.digital)
+[![Hire me on Fiverr](https://img.shields.io/badge/Hire%20me%20on-Fiverr-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white)](https://www.fiverr.com/pablonietop)
+[![React](https://img.shields.io/badge/React-18.3.1-61dafb)](https://react.dev)
+[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-<h4>IDEs: </h4>
-<img src="https://skillicons.dev/icons?i=vscode"/>
+![The login screen: a translucent red card centred on a dark grid background](docs/screenshots/login.jpg)
 
-<h1>Modern Log In</h1>
+## Description
 
-<p>Bienvenido a Modern LogIn frontend project, diseñado por Pablo Nieto (GitHub: <a href="https://github.com/pabloWIB">pabloWIB</a>)</p>
+A front-end exercise in making an authentication screen feel like a product rather than a form. A live Spline scene sits behind the page instead of a static hero image, and the card holds email, password, a visibility toggle and three social sign-in buttons.
 
-<a href="https://www.linkedin.com/in/pablo-nieto-perez-39a530292/" target="blank"><img align="center" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Pablo Nieto"/></a>
+There is no authentication behind it. The form validates in the browser — email format, password length — and then says plainly that nothing was sent, because there is no backend, no token handling and no provider wired up. The social buttons do the same. This is the interface layer on its own: a starting point to attach a real provider to, not a working login.
 
-<a href="https://www.fiverr.com/pablonietop?source=gig_page" target="blank"><img align="center" src="https://img.shields.io/badge/fiverr-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white" alt="@FiverrPablo"  /></a>
+The 3D scene is treated as an enhancement rather than a requirement. The background is drawn in CSS first, the Spline runtime is code-split into its own chunk and loaded after the form is interactive, and it is skipped entirely for anyone who has asked for reduced motion. If the CDN is unreachable the page still renders and still works.
 
+## Features
 
-<h2>Resumen</h2>
-<p>Este proyecto es una aplicación de inicio de sesión moderna, desarrollada exclusivamente en el frontend utilizando React. La interfaz cuenta con animaciones sutiles implementadas con jQuery, y se enfoca en la validación de formularios mediante React y JavaScript. La aplicación está diseñada para ser completamente responsiva, adaptándose a diferentes dispositivos y tamaños de pantalla.</p>
+- Spline 3D scene as the page background, lazy-loaded and wrapped in an error boundary.
+- CSS grid-and-glow backdrop that renders instantly and stands in whenever the scene is absent.
+- Client-side form validation with per-field messages, `aria-invalid`, and focus moved to the first invalid field.
+- Password visibility toggle as a real button, with `aria-pressed` and an accessible name that reflects its state.
+- A single polite live region that reports the outcome of the form and of each social button.
+- Design tokens in `:root` — colour, spacing, type scale, radii, motion — driving every component.
+- Mobile-first layout with no horizontal scroll from 320px up, and 44px minimum tap targets throughout.
 
-<h2>Características</h2>
-<ul>
-    <li><strong>Diseño Responsivo:</strong> La aplicación está diseñada para funcionar perfectamente en diferentes dispositivos y tamaños de pantalla, proporcionando una experiencia de usuario consistente.</li>
-    <li><strong>Animaciones Sutiles:</strong> Se incorporan animaciones suaves y atractivas utilizando jQuery para mejorar la interactividad.</li>
-    <li><strong>Validaciones Efectivas:</strong> Se implementan validaciones de formularios tanto en React como en JavaScript, asegurando una entrada de datos correcta por parte del usuario.</li>
-</ul>
+## Tech stack
 
-<h2>Tecnologías Utilizadas</h2>
-<ul>
-    <li><strong>HTML5:</strong> Utilizado para estructurar el contenido de las páginas web.</li>
-    <li><strong>CSS3 (Sass):</strong> Utilizado para estilar la interfaz de usuario y crear diseños responsivos.</li>
-    <li><strong>JavaScript (React, Vanilla JS, jQuery):</strong> Utilizado para implementar características interactivas y mejorar la experiencia del usuario.</li>
-</ul>
+| Layer | Technology | Version | Role in project |
+|---|---|---|---|
+| UI library | React | 18.3.1 | Components and local state |
+| Toolchain | react-scripts (Create React App) | 5.0.1 | Dev server, build, test runner |
+| 3D | `@splinetool/react-spline` | 4.0.0 | Background scene |
+| Styling | Plain CSS with custom properties | — | `src/styles/`, three layers, no preprocessor |
+| Testing | Testing Library (react, dom, jest-dom, user-event) | 16.3.2 / 10.4.1 / 5.17.0 / 14.6.1 | Component tests |
 
-<h2>Empezando</h2>
+## Prerequisites
 
-<p>Para comenzar con el proyecto frontend de Easybank, sigue estos pasos:</p>
+- Node.js `>=14.0.0` — required by `react-scripts@5.0.1`
+- npm 10 or newer
 
-<ol>
-    <li>Clona este repositorio en tu máquina local usando <code>git clone</code>.</li>
-    <li>Abre el directorio del proyecto en tu editor de código.</li>
-    <li>Explora los archivos del proyecto y revisa el código HTML, CSS y JavaScript.</li>
-    <li>Realiza cambios o adiciones según sea necesario para personalizar el proyecto según tus preferencias o practicar habilidades frontend específicas.</li>
-    <li>Prueba la aplicación localmente abriendo el archivo <code>index.html</code> en un navegador web.</li>
-</ol>
+## Installation
 
-<h2>Contribuciones</h2>
+```bash
+git clone https://github.com/pabloWIB/Modern-Log-In.git
+cd Modern-Log-In
+npm install
+npm start
+```
 
-<p>¡Las contribuciones al proyecto frontend de (Nombre proyecto) son bienvenidas! Si tienes ideas para mejoras, correcciones de errores o nuevas características, no dudes en abrir un problema o enviar una solicitud de extracción.</p>
+Open `http://localhost:3000`. The Spline scene is fetched from Spline's CDN on load; everything else is served locally.
 
-<h2>Licencia</h2>
-<p>Este proyecto está bajo la <a href="LICENSE">Licencia MIT</a>.</p>
+## Usage
+
+The scene is referenced by URL in `src/components/scene-background.jsx`:
+
+```jsx
+const SCENE_URL = "https://prod.spline.design/BedHsbQnoGzxGCVf/scene.splinecode";
+```
+
+Replace it with your own published scene to change the background.
+
+Validation rules live in `src/components/login-form.jsx`:
+
+```jsx
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const MIN_PASSWORD_LENGTH = 8;
+```
+
+To wire real authentication, replace the `onStatus(NO_BACKEND_MESSAGE)` call at the end of `handleSubmit` with your request. The validation, error rendering and live region are already in place around it.
+
+## Project structure
+
+```
+├── public/
+│   ├── index.html              # Document head: metadata, Open Graph, JSON-LD
+│   ├── 404.html                # Standalone error page, styles inlined
+│   ├── manifest.json           # PWA manifest, icons resolved from favicon/
+│   ├── robots.txt              # Allows all, points at the sitemap
+│   ├── sitemap.xml             # The single public URL
+│   ├── og-image.jpg            # 1200x630 social preview
+│   └── favicon/                # 16, 32, 180, 192 and 512px icons
+├── src/
+│   ├── index.jsx               # React root; imports the three stylesheets in order
+│   ├── app.jsx                 # Page shell: backdrop, main, footer
+│   ├── app.test.jsx            # Component tests for the whole screen
+│   ├── setupTests.js           # Jest setup (name fixed by react-scripts)
+│   ├── components/
+│   │   ├── scene-background.jsx  # Lazy Spline + error boundary + reduced-motion opt-out
+│   │   ├── login-card.jsx        # Card layout, owns the live-region status
+│   │   ├── login-form.jsx        # Fields, validation, submit handling
+│   │   ├── password-field.jsx    # Password input and visibility toggle
+│   │   ├── social-sign-in.jsx    # The three provider buttons
+│   │   └── site-footer.jsx       # Attribution links
+│   ├── styles/
+│   │   ├── base.css            # Tokens, reset, typography, focus, reduced motion
+│   │   ├── layout.css          # Page shell, backdrop, footer, breakpoints
+│   │   └── components.css      # Card, fields, buttons, divider, status
+│   └── assets/icons/           # eye, eye-off, google, facebook, github
+└── docs/
+    ├── auditoria.md            # State of the project before the reorganisation
+    ├── cambios.md              # Change log by phase
+    └── screenshots/login.jpg
+```
+
+## Scripts
+
+| Command | Description |
+|---|---|
+| `npm start` | Dev server on `http://localhost:3000` |
+| `npm run build` | Production build into `build/` |
+| `npm test` | Jest in watch mode via react-scripts |
+| `npm run test:ci` | Single non-interactive run |
+
+## Testing
+
+```bash
+npm run test:ci
+```
+
+`src/app.test.jsx` covers the screen end to end: it renders the heading and both fields, submits empty and expects both error messages plus `aria-invalid`, rejects a malformed address and a short password, confirms the "nothing was sent" message on valid input, toggles password visibility in both directions, and checks that a social button reports its provider as not connected.
+
+`window.matchMedia` does not exist in jsdom, so the reduced-motion check in `scene-background.jsx` returns early there and the Spline runtime never loads during tests. No mock is needed.
+
+## Performance
+
+Measured on the production build served over HTTP:
+
+| Resource | Transferred |
+|---|---|
+| Document | 1.2 KB |
+| `main.js` | 48.7 KB |
+| `main.css` | 2.4 KB |
+| Icons and favicons | ~22 KB |
+| Spline runtime chunk | 522.9 KB |
+| Spline scene file | 6.4 KB |
+| **Total first load** | **~604 KB** |
+
+The Spline runtime is the bulk of it and it is deferred: the document, stylesheet and `main.js` — about 52 KB — are all that stand between a cold cache and an interactive form.
+
+## Deployment
+
+Deployed on Vercel at [modernlogin.wib.digital](https://modernlogin.wib.digital). Build command `npm run build`, output directory `build`. No environment variables and no secrets — the Spline scene URL is a public resource.
+
+`homepage` is set to `.` in `package.json`, so the build emits relative asset paths and `build/index.html` can also be opened straight from disk.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
+
+## Author
+
+**Pablo Nieto Pérez** — [wib.digital](https://wib.digital)
+GitHub: [@pabloWIB](https://github.com/pabloWIB)
+
+---
+
+## Hire me
+
+I build **custom internal tools, CRMs and dashboards** for small teams, and
+**conversion-focused websites** for businesses.
+
+- [Custom internal tool, CRM or dashboard](https://www.fiverr.com/pablonietop/build-a-custom-internal-app-for-your-business) — from $45
+- [Conversion-focused website](https://www.fiverr.com/pablonietop/convert-your-landing-page-design-to-code) — from $80
+- [All my services on Fiverr](https://www.fiverr.com/pablonietop)
+- [wib.digital](https://wib.digital)
